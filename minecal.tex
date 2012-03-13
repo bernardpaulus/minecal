@@ -22,12 +22,6 @@
 % remove page numbers, footing...
 \pagestyle{empty}
 \usepackage[nohead,nofoot,nomarginpar,left=1cm,right=1cm,top=1cm,bottom=1cm]{geometry}
-%\setlength{\oddsidemargin}{0pt}
-%\setlength{\evensidemargin}{0pt}
-%\setlength{\hoffset}{0pt}
-%\setlength{\textwidth}{\paperwidth}
-%\addtolength{\textwidth}{-\hoffset-1in}
-%\addtolength{\textwidth}{-\hoffset-1in}
 
 % a table will constitue the skeletton of the page
 % lengths for the table
@@ -39,7 +33,7 @@
 \setlength{\countcellheight}{1in}
 
 \newlength{\daycellwidth}
-\setlength{\daycellwidth}{\textwidth/4}
+\setlength{\daycellwidth}{\textwidth/3}
 \addtolength{\daycellwidth}{-\tabcolsep}
 \addtolength{\daycellwidth}{-\tabcolsep}
 
@@ -51,13 +45,15 @@
 }
 
 \begin{document}
-\begin{tabular}{|*{4}{p{\daycellwidth}|}} \hline
-Lundi & Mardi & Mercredi & Jeudi \\ \hline
-\vspace{\blankcellsheight}\phantom{x} & & & \\ \hline
+\begin{tabular}{|*{3}{p{\daycellwidth}|}} \hline
+Lundi & Mardi & Mercredi \\ \hline
+\vspace{\blankcellsheight}\phantom{x} & & \\ \hline
 \end{tabular}
 
-\begin{tabular}{|*{4}{p{\daycellwidth}|}} \hline
-Vendredi & Samedi & Dimanche &  \\ \cline{1-3}
-\vspace{\blankcellsheight}\phantom{x} & & & \\ \hline
+\begin{tabular}{|*{3}{p{\daycellwidth}|}} \hline
+Jeudi & Vendredi & Samedi \\ \hline
+\vspace{0.5\blankcellsheight}\phantom{x} & & \\ \cline{3-3}
+         &        & Dimanche \\ \cline{3-3}
+\vspace{0.5\blankcellsheight}\phantom{x} & & \\ \hline
 \end{tabular}
 \end{document}
