@@ -9,13 +9,13 @@ to write spendings, possibly in a pocket-sized format
 Current state
 =============
 
-A one-week sheet is done, using a landscape page
+A two-sheet week is donei, but needs serious improvements
 
 TODO
 ====
 
-* produce approximately the same thing, for a portrait page:
-  That will ease the layout within the cells
+* add lines and hours
+* find a way to insert a column to do the money accounting
 * write a python script to automate the day numbering
 * add a header with the month, a fortune cookie... :)
 
