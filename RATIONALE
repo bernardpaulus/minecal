@@ -1,0 +1,67 @@
+Mon Mar 12 16:21:18 CET 2012
+
+I need a calendar and none of the one a saw in the nearby shop satisfied me so I
+decided to use my beloved LaTeX to make one.
+
+Searched the debian packages for latex calendar packages. Found:
+
+  kalender -- Create a calendar, in German.
+  calxxxx -- Prints a card-size calendar for any year.
+  termcal -- Print a class calendar.
+  yplan -- Daily planner type calendar.
+  bbcard -- Bullshit bingo, calendar and baseball-score cards.
+  pst-calendar -- Plot calendars in "fancy" ways.
+
+I'm interested in a daily/weekly planner, with either a day or a week by page.
+calxxxx, bbcard are then excluded. pst-calendar is for the one you hang on the
+wall, not pocket-sized like I desire.
+
+kalender isn't installed and is in german.
+
+yplan is a perl script that creates a calendar... but only the .sty files are
+present and yplan can't be found in my current repositories.
+
+termcal is an interesting one... good for weekly classes... but not for me, as
+using it would be the same as using a tabular.
+
+also looked at
+http://omegazeta.de/insectopolis/index.php?/archives/26-Tiny-pocket-calendar-Create-a-calendar-with-LaTeX.html
+(and more, but this one was the best I found)
+Good, but uses alien packages... I want something I can easily share, so no
+debian package outside:
+
+bernard ~/Documents/latex/calendar/minecal $ aptitude search texlive | grep '\<i\>'
+i A texlive-base                    - TeX Live: Essential programs and files    
+i A texlive-binaries                - Binaries for TeX Live                     
+i A texlive-common                  - TeX Live: Base component                  
+i A texlive-doc-base                - TeX Live: TeX Live documentation          
+i A texlive-extra-utils             - TeX Live: TeX auxiliary programs          
+i A texlive-font-utils              - TeX Live: TeX and Outline font utilities  
+i A texlive-fonts-recommended       - TeX Live: Recommended fonts               
+i A texlive-fonts-recommended-doc   - TeX Live: Documentation files for texlive-
+i A texlive-generic-recommended     - TeX Live: Recommended generic packages    
+i A texlive-latex-base              - TeX Live: Basic LaTeX packages            
+i A texlive-latex-base-doc          - TeX Live: Documentation files for texlive-
+i   texlive-latex-extra             - TeX Live: LaTeX supplementary packages    
+i A texlive-latex-extra-doc         - TeX Live: Documentation files for texlive-
+i   texlive-latex-recommended       - TeX Live: LaTeX recommended packages      
+i A texlive-latex-recommended-doc   - TeX Live: Documentation files for texlive-
+i   texlive-latex3                  - TeX Live: LaTeX3 packages                 
+i A texlive-luatex                  - TeX Live: LuaTeX packages                 
+i   texlive-math-extra              - TeX Live: Advanced math typesetting       
+i A texlive-metapost                - TeX Live: MetaPost (and Metafont) drawing 
+i A texlive-metapost-doc            - TeX Live: Documentation files for texlive-
+i A texlive-pictures                - TeX Live: Graphics packages and programs  
+i A texlive-pictures-doc            - TeX Live: Documentation files for texlive-
+i A texlive-pstricks                - TeX Live: PSTricks packages               
+i A texlive-pstricks-doc            - TeX Live: Documentation files for texlive-
+
+So, off I go! Gonna try to hack my own :) I think I'll have a look to the
+numbering system of termcal
+
+Looking at the code is hard... I need more experience with latex counters.
+
+Conclusion: a pure LaTeX solution will take too much time to develop. I'd rather
+write a python script that writes the latex for me (for now: the ideal is to
+create a pure LaTeX solution, since python lovers are only a part of LaTeX
+users)

@@ -1,0 +1,60 @@
+% main file: do all the includes, and \input's the generated table
+\documentclass[11pt,a4paper,landscape]{article} % lshort 1.6.1
+%% Source file encoding :
+	% this is the wider way in lshort
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+	% thought the next line also works under linux
+%\usepackage[utf8]{inputenc}
+
+%\usepackage[T1]{fontenc} % second standard for output fonts in LaTeX. Better suport
+% for accents, guillemets, icelandic and polish
+% but its less beautiful... use by need
+
+\usepackage[english, francais]{babel}
+\usepackage{calc} % permits calculations with the lengths
+
+\usepackage{rotating} % provides sidewaystable, sideways environments, turn
+
+\usepackage{tabularx} % tabular with fixed width and an additional specifier
+\usepackage{multirow} % \multirow command in tabulars
+
+% remove page numbers, footing...
+\pagestyle{empty}
+\usepackage[nohead,nofoot,nomarginpar,left=1cm,right=1cm,top=1cm,bottom=1cm]{geometry}
+%\setlength{\oddsidemargin}{0pt}
+%\setlength{\evensidemargin}{0pt}
+%\setlength{\hoffset}{0pt}
+%\setlength{\textwidth}{\paperwidth}
+%\addtolength{\textwidth}{-\hoffset-1in}
+%\addtolength{\textwidth}{-\hoffset-1in}
+
+% a table will constitue the skeletton of the page
+% lengths for the table
+\newlength{\blankcellswidth}
+\setlength{\blankcellswidth}{\textheight-1.2in} % guessed value
+\newlength{\daycellwidth}
+\setlength{\daycellwidth}{\blankcellswidth-1in}
+\newlength{\countcellwidth}
+\setlength{\countcellwidth}{1in}
+
+\newlength{\daycellheight}
+\setlength{\daycellheight}{\textwidth/8}
+\addtolength{\daycellheight}{-\tabcolsep}
+\addtolength{\daycellheight}{-\tabcolsep}
+
+\setlength{\parindent}{0pt} % suppress indents
+
+% correctly place text in a daycell
+\newcommand{\textindaycell}[1]{%
+\hspace{0.9\daycellheight}\begin{turn}{270}#1\end{turn}%
+}
+
+\begin{document}
+\begin{tabular}{|p{\daycellheight}|*{7}{p{\daycellheight}|}} \hline
+\multirow{2}{*}{\textindaycell{Comments:}}
+ & Dimanche 18 & Samedi 17 & Vendredi 16 & Jeudi 14 & Mercredi 15 & Mardi 13 & Lundi 12 \\ \cline{2-8}
+ & \vspace{\daycellwidth}\phantom{c}   &  &  &  &  &  &  \\ \hline \hline
+\textindaycell{Total:} & \vspace{\countcellwidth}\phantom{c} &  &  &  &  &  &  \\ \hline
+\end{tabular}
+\end{document}
