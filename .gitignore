@@ -2,3 +2,5 @@
 *.pdf
 *.aux
 *.log
+
+# temporary vim files
