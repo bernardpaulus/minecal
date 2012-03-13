@@ -1,5 +1,5 @@
 % main file: do all the includes, and \input's the generated table
-\documentclass[11pt,a4paper,landscape]{article} % lshort 1.6.1
+\documentclass[11pt,a6paper,landscape]{article} % lshort 1.6.1
 %% Source file encoding :
 	% this is the wider way in lshort
 \usepackage{ucs}
@@ -31,17 +31,17 @@
 
 % a table will constitue the skeletton of the page
 % lengths for the table
-\newlength{\blankcellswidth}
-\setlength{\blankcellswidth}{\textheight-1.2in} % guessed value
-\newlength{\daycellwidth}
-\setlength{\daycellwidth}{\blankcellswidth-1in}
-\newlength{\countcellwidth}
-\setlength{\countcellwidth}{1in}
-
+\newlength{\blankcellsheight}
+\setlength{\blankcellsheight}{\textheight-1.2in} % guessed value
 \newlength{\daycellheight}
-\setlength{\daycellheight}{\textwidth/8}
-\addtolength{\daycellheight}{-\tabcolsep}
-\addtolength{\daycellheight}{-\tabcolsep}
+\setlength{\daycellheight}{\blankcellsheight-1in}
+\newlength{\countcellheight}
+\setlength{\countcellheight}{1in}
+
+\newlength{\daycellwidth}
+\setlength{\daycellwidth}{\textwidth/4}
+\addtolength{\daycellwidth}{-\tabcolsep}
+\addtolength{\daycellwidth}{-\tabcolsep}
 
 \setlength{\parindent}{0pt} % suppress indents
 
@@ -51,10 +51,13 @@
 }
 
 \begin{document}
-\begin{tabular}{|p{\daycellheight}|*{7}{p{\daycellheight}|}} \hline
-\multirow{2}{*}{\textindaycell{Comments:}}
- & Dimanche 18 & Samedi 17 & Vendredi 16 & Jeudi 14 & Mercredi 15 & Mardi 13 & Lundi 12 \\ \cline{2-8}
- & \vspace{\daycellwidth}\phantom{c}   &  &  &  &  &  &  \\ \hline \hline
-\textindaycell{Total:} & \vspace{\countcellwidth}\phantom{c} &  &  &  &  &  &  \\ \hline
+\begin{tabular}{|*{4}{p{\daycellwidth}|}} \hline
+Lundi & Mardi & Mercredi & Jeudi \\ \hline
+\vspace{\blankcellsheight}\phantom{x} & & & \\ \hline
+\end{tabular}
+
+\begin{tabular}{|*{4}{p{\daycellwidth}|}} \hline
+Vendredi & Samedi & Dimanche &  \\ \cline{1-3}
+\vspace{\blankcellsheight}\phantom{x} & & & \\ \hline
 \end{tabular}
 \end{document}
