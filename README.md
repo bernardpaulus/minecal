@@ -1,7 +1,23 @@
 About
-======
+=====
 
-My attempts at producting a calendar using LaTeX
+My attempts at producting a calendar using LaTeX.
+
+The goal is to produce a 1 or two pages per week calendar, with space
+to write spendings, possibly in a pocket-sized format
+
+Current state
+=============
+
+A one-week sheet is done, using a landscape page
+
+TODO
+====
+
+* produce approximately the same thing, for a portrait page:
+  That will ease the layout within the cells
+* write a python script to automate the day numbering
+* add a header with the month, a fortune cookie... :)
 
 License
 =======
