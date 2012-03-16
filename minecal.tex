@@ -12,52 +12,29 @@
 % but its less beautiful... use by need
 
 \usepackage[english, francais]{babel}
-\usepackage{calc} % permits calculations with the lengths
 
-\usepackage{rotating} % provides sidewaystable, sideways environments, turn
+\usepackage{verbatim} % verbatim and comment environments
 
-\usepackage{tabularx} % tabular with fixed width and an additional specifier
-\usepackage{multirow} % \multirow command in tabulars
+\usepackage{tikz}
+\usetikzlibrary{calc} % do some computation & for loops
 
 % remove page numbers, footing...
 \pagestyle{empty}
 \usepackage[nohead,nofoot,nomarginpar,left=1cm,right=1cm,top=1cm,bottom=1cm]{geometry}
 
-% a table will constitue the skeletton of the page
-% lengths for the table
-\newlength{\blankcellsheight}
-\setlength{\blankcellsheight}{\textheight-1.2in} % guessed value
-\newlength{\daycellheight}
-\setlength{\daycellheight}{\blankcellsheight-1in}
-\newlength{\countcellheight}
-\setlength{\countcellheight}{1in}
-
-\newlength{\daycellwidth}
-\setlength{\daycellwidth}{\textwidth/3}
-\addtolength{\daycellwidth}{-\tabcolsep}
-\addtolength{\daycellwidth}{-\tabcolsep}
-
-\setlength{\parindent}{0pt} % suppress indents
-
-% correctly place text in a daycell
-\newcommand{\textindaycell}[1]{%
-\hspace{0.9\daycellheight}\begin{turn}{270}#1\end{turn}%
-}
 
 \begin{document}
-% height of a line is normally \baselineskip .. but you can also count on the
-% width of the \hlines
-\begin{tabular}{|*{3}{p{\daycellwidth}|}} \hline
-Lundi & Mardi & Mercredi \\ \hline
-\rule{1pt}{\baselineskip} & & \\ \hline
-a & & \\[2ex] \hline
- & & \\ \hline
-\end{tabular}
+\noindent
+%\rule{0pt}{\textheight} % place the bottom left corner of the picture in the
+% bottom left corner of the text area
+\begin{tikzpicture}
+%\draw[line width=2pt,color=red] (1in,0in) -- (0in,0in) -- (0in,1in) -- cycle;
+\draw (0,0) rectangle (\textwidth,\textheight);
+\end{tikzpicture}
 
-\begin{tabular}{|*{3}{p{\daycellwidth}|}} \hline
-Jeudi & Vendredi & Samedi \\ \hline
- & & \\ \cline{3-3}
-         &        & Dimanche \\ \cline{3-3}
- & & \\ \hline
-\end{tabular}
+\noindent
+\begin{tikzpicture}
+%\draw[line width=2pt,color=red] (1in,0in) -- (0in,0in) -- (0in,1in) -- cycle;
+\draw (0,0) rectangle (\textwidth,\textheight);
+\end{tikzpicture}
 \end{document}
