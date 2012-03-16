@@ -65,3 +65,11 @@ Conclusion: a pure LaTeX solution will take too much time to develop. I'd rather
 write a python script that writes the latex for me (for now: the ideal is to
 create a pure LaTeX solution, since python lovers are only a part of LaTeX
 users)
+
+
+--------------
+
+Fiddling with LaTeX lengths is lengthy :)
+
+I just think i'm gonna throw everything away and just use pgf/tikz to make my
+own display.
