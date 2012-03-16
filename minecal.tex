@@ -45,15 +45,19 @@
 }
 
 \begin{document}
+% height of a line is normally \baselineskip .. but you can also count on the
+% width of the \hlines
 \begin{tabular}{|*{3}{p{\daycellwidth}|}} \hline
 Lundi & Mardi & Mercredi \\ \hline
-\vspace{\blankcellsheight}\phantom{x} & & \\ \hline
+\rule{1pt}{\baselineskip} & & \\ \hline
+a & & \\[2ex] \hline
+ & & \\ \hline
 \end{tabular}
 
 \begin{tabular}{|*{3}{p{\daycellwidth}|}} \hline
 Jeudi & Vendredi & Samedi \\ \hline
-\vspace{0.5\blankcellsheight}\phantom{x} & & \\ \cline{3-3}
+ & & \\ \cline{3-3}
          &        & Dimanche \\ \cline{3-3}
-\vspace{0.5\blankcellsheight}\phantom{x} & & \\ \hline
+ & & \\ \hline
 \end{tabular}
 \end{document}
